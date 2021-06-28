@@ -27,14 +27,9 @@ function Row({ title, fetchUrl, isLargeRow = false }) {
 				{movies.map(
 					(movie) =>
 						// checks for broken links
-						((isLargeRow && movie.poster_path) ||
-							(!isLargeRow && movie.backdrop_path)) && (
+						(
 							<img
-								src={`${base_url}${
-									isLargeRow
-										? movie.poster_path
-										: movie.backdrop_path
-								}`}
+								src={`${base_url}${movie.poster_path}`}
 								className={`row_poster ${
 									isLargeRow && "row_posterLarge"
 								}`}
