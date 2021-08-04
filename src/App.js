@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Counter } from './features/counter/Counter';
 import Homescreen from './screens/Homescreen';
 import LoginScreen from './screens/LoginScreen';
@@ -10,9 +10,22 @@ import {
 } from "react-router-dom";
 
 import './App.css';
+import { auth } from './firebase';
 
 function App() {
   const user = null;
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged(user => {
+      if (user) {
+        // logged in
+        console.log(user);
+      } else {
+        // logged out
+      }
+    });
+
+    return unsubscribe;
+  }, []);
 
   return (
     <Router>
