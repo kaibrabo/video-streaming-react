@@ -41,11 +41,11 @@
 	color: gray;
 }
 
-.signup_screen > form > h4 > a {
+.signup_screen > form > h4 > span {
 	color: white;
 }
 
-.signup_screen > form > h4 > a:hover {
+.signup_screen > form > h4 > span:hover {
 	cursor: pointer;
 	text-decoration: underline;
 }

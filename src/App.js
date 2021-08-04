@@ -11,16 +11,24 @@ import {
 
 import './App.css';
 import { auth } from './firebase';
+import { useDispatch } from 'react-redux';
+import { login, logout } from './features/userSlice';
 
 function App() {
   const user = null;
+  const dispatch = useDispatch();
+
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged(user => {
       if (user) {
         // logged in
-        console.log(user);
+        dispatch(login({
+          uid: user.uid,
+          email: user.email,
+        }))
       } else {
         // logged out
+        dispatch(logout)
       }
     });
 

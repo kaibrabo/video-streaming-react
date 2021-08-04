@@ -50,7 +50,7 @@ function SignUpScreen() {
 				</button>
 
 				<h4>
-					New to Netflix? <a onClick={register}>Sign up now.</a>
+					New to Netflix? <span onClick={register}>Sign up now.</span>
 				</h4>
 			</form>
 		</div>
