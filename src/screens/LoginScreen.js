@@ -25,7 +25,7 @@ function LoginScreen() {
 						<SignUpScreen />
 					) : (
 						<>
-							<h1>Unlimited films , TV programs and more.</h1>
+							<h1>Unlimited movies , TV shows and more.</h1>
 							<h2>Watch anywhere. Cancel at anytime.</h2>
 							<h3>
 								Ready to watch? Enter your email to create or
