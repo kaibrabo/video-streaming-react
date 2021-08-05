@@ -1,16 +1,10 @@
-import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
-
-const initialState = {
-  value: 0,
-  status: 'idle',
-};
+import { createSlice } from '@reduxjs/toolkit';
 
 
 export const userSlice = createSlice({
   name: 'user',
   initialState: {
     user: null,
-
   },
  
   reducers: {

@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
-import { Counter } from './features/counter/Counter';
 import Homescreen from './screens/Homescreen';
 import LoginScreen from './screens/LoginScreen';
+import ProfileScreen from './screens/ProfileScreen'; 
 
 import {
   BrowserRouter as Router,
@@ -28,12 +28,12 @@ function App() {
         }))
       } else {
         // logged out
-        dispatch(logout)
+        dispatch(logout())
       }
     });
 
     return unsubscribe;
-  }, []);
+  }, [dispatch]);
 
   return (
     <Router>
@@ -43,6 +43,9 @@ function App() {
           :
           (
             <Switch>
+              <Route path="/profile">
+                <ProfileScreen />
+              </Route>
               <Route exact path="/">
                 <Homescreen />
               </Route>
@@ -52,14 +55,6 @@ function App() {
       </div>
     </Router>
   );
-}
-
-function About() {
-  return <h2>About</h2>;
-}
-
-function Users() {
-  return <h2>Users</h2>;
 }
 
 export default App;
