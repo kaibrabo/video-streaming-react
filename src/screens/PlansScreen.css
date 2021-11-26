@@ -18,3 +18,8 @@
 	border: none;
 	cursor: pointer;
 }
+
+.plans_screen_plans--disabled > button {
+	background-color: gray !important;
+	cursor: default;
+}
